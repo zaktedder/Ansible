@@ -1,0 +1,18 @@
+---
+
+# Ansible file that installs postgres on a local machine
+
+- name: Install postgres
+  hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Install Package
+      become: true
+      become_user: root
+      apt:
+        name:
+          -postgres
+        state: present
+          
+...
